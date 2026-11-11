@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # =======================================
-# Rainbow banner for Lapiogamer
+# Rainbow banner forn1lux
 # =======================================
 rainbow() {
   text=$1
@@ -17,7 +17,7 @@ rainbow() {
 
 clear
 rainbow "================================================"
-rainbow "    WELCOME TO Lapiogamer Auto Setup"
+rainbow "    WELCOME TO n1lux Auto Setup"
 rainbow "================================================"
 echo
 
@@ -211,7 +211,7 @@ elif [ "$choice" = "2" ]; then
     -p 6080:6080 \
     -p 5901:5901 \
     -v ubuntu_data:/root \
-    lapiogamer/ubuntu-vnc
+   n1lux/ubuntu-vnc
 
 # =======================================
 # Option 3 → Install Pterodactyl Panel + Node
