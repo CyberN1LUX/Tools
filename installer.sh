@@ -2,7 +2,7 @@
 set -Eeuo pipefail
 
 # ============================================================
-#                         LAPIO BHAI
+#                         n1lux BHAI
 #                        Vps Manager
 # ============================================================
 
@@ -26,11 +26,11 @@ BRIGHT_RED=$'\033[91m'
 BRIGHT_YELLOW=$'\033[93m'
 BRIGHT_MAGENTA=$'\033[95m'
 
-APP_NAME="LAPIO BHAI"
+APP_NAME="n1lux BHAI"
 APP_VERSION="2.5"
-LOG_DIR="${HOME}/.lapio-bhai"
+LOG_DIR="${HOME}/.n1lux-bhai"
 LOG_FILE="${LOG_DIR}/installer.log"
-VPS_DIR="${HOME}/.lapio-bhai/vps"
+VPS_DIR="${HOME}/.n1lux-bhai/vps"
 VPS_ENV="${VPS_DIR}/.vps_env"
 
 mkdir -p "$LOG_DIR" "$VPS_DIR"
@@ -236,7 +236,7 @@ header() {
     clear
     echo
     echo -e "  ${BRIGHT_CYAN}${BOLD}╭────────────────────────────────────────────────────────────╮${RESET}"
-    echo -e "  ${BRIGHT_CYAN}${BOLD}│${RESET}  ${BRIGHT_MAGENTA}${BOLD}LAPIO BHAI${RESET}  ${DIM}•${RESET}  ${BRIGHT_WHITE}SERVER INSTALLER${RESET}  ${DIM}v${APP_VERSION}${RESET}       ${BRIGHT_CYAN}${BOLD}│${RESET}"
+    echo -e "  ${BRIGHT_CYAN}${BOLD}│${RESET}  ${BRIGHT_MAGENTA}${BOLD}n1lux BHAI${RESET}  ${DIM}•${RESET}  ${BRIGHT_WHITE}SERVER INSTALLER${RESET}  ${DIM}v${APP_VERSION}${RESET}       ${BRIGHT_CYAN}${BOLD}│${RESET}"
     echo -e "  ${BRIGHT_CYAN}${BOLD}╰────────────────────────────────────────────────────────────╯${RESET}"
     echo
 }
@@ -416,7 +416,7 @@ create_cloud_init() {
     # guest itself and explicitly enable its services on first boot.
     cat > "$user_data" <<EOF
 #cloud-config
-hostname: lapio-vps
+hostname: n1lux-vps
 manage_etc_hosts: true
 ssh_pwauth: true
 ssh_deletekeys: false
@@ -453,8 +453,8 @@ runcmd:
 EOF
 
     cat > "$meta_data" <<EOF
-instance-id: lapio-bhai-vps
-local-hostname: lapio-vps
+instance-id: n1lux-bhai-vps
+local-hostname: n1lux-vps
 EOF
 
     run_silent "Generating cloud-init disk" \
@@ -999,7 +999,7 @@ EOF
         status_warn "PufferPanel config.json was not found; leaving package defaults unchanged"
     fi
 
-    # PufferPanel packages ship pufferpanel.service, but LAPIO BHAI can also
+    # PufferPanel packages ship pufferpanel.service, but n1lux BHAI can also
     # be executed inside containers where systemd is not PID 1. In that case
     # `systemctl enable` fails even though PufferPanel itself is installed.
     # Detect that situation before calling systemctl and use PufferPanel's
@@ -1241,7 +1241,7 @@ dashboards_menu() {
         section_title ".DASHBOARDS"
 
         echo -e "  ${CYAN}01${RESET}  ${WHITE}ChunkDash • Feastic Theme${RESET}"
-        echo -e "      ${DIM}Install Lapio's custom hosting dashboard${RESET}"
+        echo -e "      ${DIM}Install n1lux's custom hosting dashboard${RESET}"
         echo
         echo -e "  ${CYAN}02${RESET}  ${DIM}Coming Soon${RESET}"
         echo
@@ -1332,7 +1332,7 @@ main_menu() {
         echo
 
         line
-        echo -e "  ${DIM}LAPIO BHAI${RESET} ${BRIGHT_CYAN}›${RESET} ${DIM}Ready for command${RESET}"
+        echo -e "  ${DIM}n1lux BHAI${RESET} ${BRIGHT_CYAN}›${RESET} ${DIM}Ready for command${RESET}"
         printf -v MAIN_MENU_PROMPT "  %s%sSelect [00-05] › %s" "$BRIGHT_CYAN" "$BOLD" "$RESET"
         read -r -p "$MAIN_MENU_PROMPT" choice
 
@@ -1352,7 +1352,7 @@ main_menu() {
             0|00)
                 clear
                 echo
-                echo -e "  ${BRIGHT_CYAN}${BOLD}LAPIO BHAI${RESET} ${DIM}installer closed.${RESET}"
+                echo -e "  ${BRIGHT_CYAN}${BOLD}n1lux BHAI${RESET} ${DIM}installer closed.${RESET}"
                 echo
                 exit 0
                 ;;
