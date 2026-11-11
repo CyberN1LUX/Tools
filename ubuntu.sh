@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # =======================================
-# Rainbow banner for Lapiogamer
+# Rainbow banner for n1lux
 # =======================================
 rainbow() {
   text=$1
@@ -17,7 +17,7 @@ rainbow() {
 
 clear
 rainbow "================================================"
-rainbow "    WELCOME TO Lapiogamer Auto Setup"
+rainbow "    WELCOME TO n1lux Auto Setup"
 rainbow "================================================"
 echo
 
@@ -29,7 +29,7 @@ echo "  1) Setup IDX VM (dev.nix + script.sh)"
 echo "  2) Run Ubuntu VNC Docker"
 echo "  3) Install Pterodactyl Panel + Node"
 echo "  4) Install Playit"
-echo "  5) Lapio's Custom Dash ChunkDash"
+echo "  5) n1lux's Custom Dash ChunkDash"
 echo "  0) Exit"
 echo
 read -p "Enter choice: " choice
@@ -211,7 +211,7 @@ elif [ "$choice" = "2" ]; then
     -p 6080:6080 \
     -p 5901:5901 \
     -v ubuntu_data:/root \
-    lapiogamer/ubuntu-vnc
+    n1lux/ubuntu-vnc
 
 # =======================================
 # Option 3 → Install Pterodactyl Panel + Node
@@ -233,10 +233,10 @@ elif [ "$choice" = "4" ]; then
   echo "[INFO] Playit VPN installed successfully. You can now run 'playit' command."
 
 # =======================================
-# Option 5 → Lapio's Custom Dash ChunkDash
+# Option 5 → n1lux's Custom Dash ChunkDash
 # =======================================
 elif [ "$choice" = "5" ]; then
-  echo "Lapio's Custom Dash ChunkDash"
+  echo "n1lux's Custom Dash ChunkDash"
   echo "Choose a theme:"
   echo "  1) Feastic Theme"
   echo "  2) Soon"
